@@ -1,5 +1,5 @@
 <?php
-class Main{
+class Privatens{
     function message($code, $msg){
         return [
             "code"    => $code,
@@ -117,7 +117,7 @@ function privatens_GetNameservers($params) {
         "domain" => $params['sld'].".".$params['tld']
     ];
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
         
         $request = $main->request($params['apiurl']."/rest/v2/domain/get/info","POST",$auth->access_token,$datas);
@@ -154,7 +154,7 @@ function privatens_SaveNameservers($params) {
         "nameserver" => [$params['ns1'],$params['ns2'],$params['ns3'],$params['ns4']]
     ];
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/domain/nameserver/update","PUT",$auth->access_token,$datas);
@@ -218,7 +218,7 @@ function privatens_RegisterDomain($params) {
     $datas = array_merge($data,$registrant);
     
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/domain/create","POST",$auth->access_token,$datas);
@@ -282,7 +282,7 @@ function privatens_TransferDomain($params) {
     $datas = array_merge($data,$registrant);
 
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/domain/transfer","POST",$auth->access_token,$datas);
@@ -314,7 +314,7 @@ function privatens_RenewDomain($params) {
     ];
 
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/domain/renew","POST",$auth->access_token,$datas);
@@ -345,7 +345,7 @@ function privatens_GetEPPCode($params) {
     ];
 
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/domain/get/eppcode","POST",$auth->access_token,$datas);
@@ -376,7 +376,7 @@ function privatens_GetRegistrarLock($params) {
     ];
 
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/domain/get/info","POST",$auth->access_token,$datas);
@@ -409,7 +409,7 @@ function privatens_SaveRegistrarLock($params) {
     ];
     
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/domain/togel/lock","POST",$auth->access_token,$datas);
@@ -440,7 +440,7 @@ function privatens_RegisterNameserver($params) {
         "ip6"  => $params['ip6']
     ];
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/child/nameserver/create","POST",$auth->access_token,$datas);
@@ -472,7 +472,7 @@ function privatens_ModifyNameserver($params) {
     ];
     
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
 
@@ -503,7 +503,7 @@ function privatens_DeleteNameserver($params) {
     ];
     
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/child/nameserver/delete","DELETE",$auth->access_token,$datas);
@@ -534,7 +534,7 @@ function privatens_GetContactDetails($params){
     ];
 
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/registrant/detail","POST",$auth->access_token,$datas);
@@ -581,7 +581,7 @@ function privatens_SaveContactDetails($params){
     ];
 
     try {
-        $main=new Main;
+        $main=new Privatens;
         $auth = $main->authentication($params['apiurl'],$oauth2);
 
         $request = $main->request($params['apiurl']."/rest/v2/registrant/detail","POST",$auth->access_token,$datas);
