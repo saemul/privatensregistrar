@@ -72,10 +72,6 @@ class Privatens{
 
 function privatens_getConfigArray(){
     $configarray = array(
-	    "name" => "PrivateNS Registrar",
-        "description" => "Registrar Module For PrivateNS",
-        "version" => "3.0",
-        "author" => "PrivateNS",
         "apiurl" => array (
             "FriendlyName" => "API Url",
             "Type"         => "text", # Text Box
