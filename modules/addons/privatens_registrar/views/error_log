@@ -1,0 +1,6 @@
+[10-Nov-2018 15:00:05 Asia/Jakarta] PHP Fatal error:  Call to a member function fetch_object() on null in /home/poqwcom/public_html/modules/addons/mod_idcard/views/page_admin.php on line 12
+[10-Nov-2018 15:00:05 Asia/Jakarta] PHP Fatal error:  Call to a member function fetch_object() on null in /home/poqwcom/public_html/modules/addons/mod_idcard/views/document_client.php on line 3
+[10-Nov-2018 15:00:05 Asia/Jakarta] PHP Warning:  Invalid argument supplied for foreach() in /home/poqwcom/public_html/modules/addons/mod_idcard/views/list_image.php on line 3
+[10-Nov-2018 15:00:05 Asia/Jakarta] PHP Warning:  Invalid argument supplied for foreach() in /home/poqwcom/public_html/modules/addons/mod_idcard/views/page_approval.php on line 11
+[10-Nov-2018 15:03:11 Asia/Jakarta] PHP Warning:  Invalid argument supplied for foreach() in /home/poqwcom/public_html/modules/addons/mod_idcard/views/list_image.php on line 3
+[10-Nov-2018 15:03:12 Asia/Jakarta] PHP Warning:  Invalid argument supplied for foreach() in /home/poqwcom/public_html/modules/addons/mod_idcard/views/page_approval.php on line 11
