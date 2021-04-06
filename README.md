@@ -19,6 +19,7 @@ How to Install
 10. Checklist Access Control for Full Administrator
 11. Save Changes
 12. Paste Code below anywhere into public_html/templates/{YourTemplate}/clientareadomaindetails.tpl
+`
 				<li>
                     <a href="index.php?m=privatens_registrar&page=dnssecmanager&domain={$domain}">
                         Domain DNSSEC Manager
@@ -29,12 +30,14 @@ How to Install
                         Upload Domain Requirements
                     </a>
                 </li>
+`
 13. Save Changes	
 
 # WHOIS WHMCS V.6 Configuration
 1. Login To Your FTP 
 2. Open /includes/whoisservers.php
-3. Add line  
+3. Add line
+` 
 .web.id|whois.pandi.or.id|DOMAIN NOT FOUND
 .ac.id|whois.pandi.or.id|DOMAIN NOT FOUND
 .co.id|whois.pandi.or.id|DOMAIN NOT FOUND
@@ -44,19 +47,19 @@ How to Install
 .my.id|whois.pandi.or.id|DOMAIN NOT FOUND
 .id|whois.pandi.or.id|DOMAIN NOT FOUND
 .ponpes.id|whois.pandi.or.id|DOMAIN NOT FOUND
-
+`
 4. Save File
 
 # WHOIS WHMCS V.7 Configuration
 1. Login To Your FTP 
 2. Open File "dist.whois.json" in folder /resources/domains/
 3. Edit Line 
-
+`
  "extensions": ".co.id,.desa.id,.web.id,.ac.id,.or.id,.sch.id,.my.id,.biz.id",
-    
+`    
 To
-
+`
  "extensions": ".id,.ponpes.id,.co.id,.desa.id,.web.id,.ac.id,.or.id,.sch.id,.my.id,.biz.id",   
-
+`
 
 4. Save File
