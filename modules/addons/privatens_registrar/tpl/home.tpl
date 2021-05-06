@@ -128,8 +128,7 @@
 </form>
 
 
-<script src="https://portal.qwords.com/assets/js/dropzone.js">
-</script>
+<script src="./modules/addons/privatens_registrar/assets/dropzone.js"></script>
 
 <script>
 
