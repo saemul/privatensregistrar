@@ -23,14 +23,19 @@ How to Install
 14. Save Changes 
 16. Paste Code below anywhere into public_html/templates/{YourTemplate}/clientareadomaindetails.tpl
 `
-				<li>
+		<li>
                     <a href="index.php?m=privatens_registrar&page=dnssecmanager&domain={$domain}">
                         Domain DNSSEC Manager
                     </a>
                 </li>
-				<li>
+		<li>
                     <a href="index.php?m=privatens_registrar">
                         Upload Domain Requirements
+                    </a>
+                </li>
+		<li>
+                    <a href="index.php?m=privatens_registrar&page=dnsmanager&domainname={$domain}">
+                        DNS Manager
                     </a>
                 </li>
 `
