@@ -73,7 +73,7 @@ class MainDnsPrivatensX
         try {
             $auth = $this->authentication($params['apiurl'],$oauth2);
             
-            $request = $this->request($params['apiurl']."/rest/v2/dnsmanager/check/status","POST",$auth->access_token,$datas);
+            $request = $this->request($params['apiurl']."/rest/v2/dnsmanagerv2/check/status","POST",$auth->access_token,$datas);
             
             return $request;
             
@@ -99,7 +99,7 @@ class MainDnsPrivatensX
         try {
             $auth = $this->authentication($params['apiurl'],$oauth2);
             
-            $request = $this->request($params['apiurl']."/rest/v2/dnsmanager/confirm","POST",$auth->access_token,$datas);
+            $request = $this->request($params['apiurl']."/rest/v2/dnsmanagerv2/confirm","POST",$auth->access_token,$datas);
 
             return $request;
             
@@ -306,7 +306,7 @@ function privatens_registrar_clientarea($vars) {
 				->where('id',$domainID)
 				->where('userid',$_SESSION['uid'])
 				->value('domain');
-	
+
 	/* if(!$domain){
 		$message = ['status' => 'failed', 'messages' => 'Access not permitted..!'];
 	} */
@@ -427,6 +427,7 @@ function privatens_registrar_clientarea($vars) {
         }
         
         $check=$main->listDNS($vars,$domain);
+
         if(!boolval($check->data->data->zone)){
             return array(
                 'pagetitle'    => 'Privatens DNS Manager',
