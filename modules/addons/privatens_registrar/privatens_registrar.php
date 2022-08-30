@@ -302,10 +302,22 @@ function privatens_registrar_clientarea($vars) {
     $page = $_GET['page'];
 	//validate
 	$domainID=(int)$_GET['id'];
+	$domainname=$_GET['domainname'];
+	
+	if ($domainname)
+	{
+	$domain = DB::table('tbldomains')
+				->where('domain',$domainname)
+				->where('userid',$_SESSION['uid'])
+				->value('domain');
+	}
+	else
+	{
 	$domain = DB::table('tbldomains')
 				->where('id',$domainID)
 				->where('userid',$_SESSION['uid'])
 				->value('domain');
+	}
 
 	/* if(!$domain){
 		$message = ['status' => 'failed', 'messages' => 'Access not permitted..!'];
