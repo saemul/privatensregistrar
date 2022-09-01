@@ -1,7 +1,7 @@
 {if $domainname ==''}
 	<div class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>Oh snap!</strong> Access not permitted...!
+        <strong>Oh snap!</strong> Access not permitted... test!
     </div>
 {else}
 
@@ -20,7 +20,7 @@
 <div class="panel-heading">
     <h4>DNS Manager</h4>
     <span class=" pull-right">
-        <a id='terminated' data-loading-text="<i class='fa fa-spinner fa-spin '></i> Terminating" href="index.php?m=privatens_registrar&id={$GET.id}&page=dnsmanager&terminate" class="btn btn-warning"><i class="fa fa-ban"></i> Terminate All Record</a>
+        <a id='terminated' data-loading-text="<i class='fa fa-spinner fa-spin '></i> Terminating" href="index.php?m=privatens_registrar&id={$smarty.get.id}&domainname={$smarty.get.domainname}&page=dnsmanager&terminate" class="btn btn-warning"><i class="fa fa-ban"></i> Terminate All Record</a>
     </span>
     </h4>
     <div class="clearfix"></div>
@@ -57,7 +57,7 @@
             {/foreach}
         </tbody>
     </table>
-     <form id='form_privatensdns' method="post" action='index.php?m=privatens_registrar&id={$GET.id}&add'>
+     <form id='form_privatensdns' method="post" action='index.php?m=privatens_registrar&id={$smarty.get.id}&domainname={$smarty.get.domainname}&page=dnsmanager&add'>
       
         <table class="table table-condensed table-striped">
             <tbody>
