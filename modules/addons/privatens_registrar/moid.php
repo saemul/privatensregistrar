@@ -543,6 +543,8 @@ SQL;
         
     }
     private function _client_home($vars,$msg=''){
+
+        
          return array(
             'pagetitle'    => 'Domain document',
             'breadcrumb'   => array('index.php?m=privatens_registrar'=>'Domain document'),
