@@ -1,7 +1,7 @@
 {if $domainname ==''}
 	<div class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>Oh snap!</strong> Access not permitted...!
+        Access not permitted...!
     </div>
 {else}
 
@@ -60,7 +60,7 @@
     });
     $("#confirmed").click(function() {
         var $btn = $(this);
-        var answer = confirm("Are you sure you want to use this fiture?");
+        var answer = confirm("Are you sure you want to use this feature?");
         if(answer){
             $btn.button('loading');
             return true;
