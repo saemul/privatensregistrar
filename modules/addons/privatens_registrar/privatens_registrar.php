@@ -127,7 +127,7 @@ class MainDnsPrivatensX
             $auth = $this->authentication($params['apiurl'],$oauth2);
             
             $request = $this->request($params['apiurl']."/rest/v2/dnsmanagerv2/create","POST",$auth->access_token,$datas);
-
+            
             return $request;
             
         } catch (\Exception $e) {
@@ -380,7 +380,8 @@ function privatens_registrar_clientarea($vars) {
             );
         }
         
-        if(isset($_GET['add'])){   
+        
+        if(isset($_GET['add'])){ 
             $domainname=$domain;
             // $data=array(
             //     'domain'=>$_POST['domain'],
@@ -390,6 +391,7 @@ function privatens_registrar_clientarea($vars) {
             //     'ttl'   =>$_POST['ttl'],
             // );
             $data = $_POST;
+            
 			
             $addDNS = $main->addDNS($vars,$data);
             if($addDNS->code == 200){
@@ -400,6 +402,8 @@ function privatens_registrar_clientarea($vars) {
     
             $getDNS = $main->listDNS($vars,$domain);
             $dataDns = ['dns' => $getDNS->data, 'domainname' =>$domain, 'message' => $message];
+            
+        
             return array(
                 'pagetitle'    => 'Privatens DNS Manager',
                 'breadcrumb'   => array('index.php?m=privatens_registrar'=>'Privatens DNS Manager'),
@@ -418,10 +422,22 @@ function privatens_registrar_clientarea($vars) {
                 if($createDNS->code == 200){
                     $message = ['status' => 'success', 'messages' => $createDNS->message];
                 }else{
-                    $message = ['status' => 'failed', 'messages' => 'Failed create dns record. Please contact your administrator!'];
+                    $message = ['status' => 'failed', 'messages' => $createDNS->data->result[0]->statusmsg];
                 }
                 
                 sleep (10);
+                
+                if ($message['status'] == 'failed'){
+                    $dataDns = ['domainname' =>$domain, 'message' => $message];
+                    return array(
+                        'pagetitle'    => 'Privatens DNS Manager',
+                        'breadcrumb'   => array('index.php?m=privatens_registrar'=>'Privatens DNS Manager'),
+                        'templatefile' => 'confirm',
+                        'requirelogin' => true, # accepts true/false
+                        'forcessl'     => false, # accepts true/false
+                        'vars'         => $dataDns,
+                    );
+                }
     
                 $getDNS = $main->listDNS($vars,$domain);
                 $allData = ['dns' => $getDNS->data, 'domainname' =>$domain];
@@ -439,8 +455,14 @@ function privatens_registrar_clientarea($vars) {
         }
         
         $check=$main->listDNS($vars,$domain);
-
+        
+        // echo '<pre>';
+        // echo $domain;
+        // var_dump($check);
+        // die();
+        
         if(!boolval($check->data->data->zone)){
+            
             return array(
                 'pagetitle'    => 'Privatens DNS Manager',
                 'breadcrumb'   => array('index.php?m=privatens_registrar'=>'Privatens DNS Manager'),
