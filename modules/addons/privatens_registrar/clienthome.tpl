@@ -19,9 +19,6 @@
 <div class="panel panel-default">
 <div class="panel-heading">
     <h4>DNS Manager</h4>
-    <span class=" pull-right">
-        <a id='terminated' data-loading-text="<i class='fa fa-spinner fa-spin '></i> Terminating" href="index.php?m=privatens_registrar&id={$smarty.get.id}&domainname={$smarty.get.domainname}&page=dnsmanager&terminate" class="btn btn-warning"><i class="fa fa-ban"></i> Terminate All Record</a>
-    </span>
     </h4>
     <div class="clearfix"></div>
 
@@ -162,18 +159,6 @@
         }
     });
 
-    $("#terminated").click(function() {
-        condole.log('hasawao');
-        var $btn = $(this);
-        var answer = confirm("Are you sure you want to terminate all record?");
-        if(answer){
-            $btn.button('loading');
-            return true;
-        }
-        else{
-            return false;
-        }
-        
-    });
+   
 </script>
 {/if}
